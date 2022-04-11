@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Center} from '@chakra-ui/react'
+import AddTodo from './components/todo/AddTodo'
+import ListTodos from './components/todo/ListTodos'
+import Header from './components/header/Header'
+import DarkMode from './components/darkMode/DarkMode'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DarkMode/>
+
+      <Center my={10}>
+        <Header/>
+      </Center>
+
+      <Center my={10}>
+        <AddTodo />
+      </Center>
+
+      <Center my={10}>
+        <ListTodos />
+      </Center>
+
+      <Footer/>
+    </>
   );
 }
 
