@@ -23,7 +23,7 @@ export default function Footer() {
           align={{ base: 'center', md: 'center' }}
         >
           <Text>
-            Made with ♡ <a
+            Made by  <a
               href='https://github.com/juan7diaz'
               rel='noopener noreferrer'
               target='_blank'

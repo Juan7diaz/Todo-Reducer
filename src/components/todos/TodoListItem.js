@@ -1,8 +1,13 @@
+import { useState } from 'react'
 import { IconButton, Td, Tr} from '@chakra-ui/react'
 import { CheckIcon, DeleteIcon, SmallCloseIcon } from '@chakra-ui/icons'
+import Modal from '../modal/Modal'
 
 export default function TodoListItem({todo, handleDelete, handleDoneTodo}){
-  return (
+
+	const [ isOpen, setIsOpen ] = useState(false)
+
+	return (
 		<Tr>
 			<Td>
 				<IconButton
@@ -19,9 +24,10 @@ export default function TodoListItem({todo, handleDelete, handleDoneTodo}){
 					icon = { <DeleteIcon/>}
 					maxWidth='40'
 					mx = '2'
-					onClick={ () => handleDelete(todo.id)  }
+					onClick={ () => setIsOpen(true)}
 					variant='solid'
 				/>
+				<Modal handleDelete={handleDelete} todoId={todo.id} isOpen={isOpen} setIsOpen={setIsOpen}/>
 			</Td>
 			<Td>
 				{todo.desc} { todo.done && '✅' }
