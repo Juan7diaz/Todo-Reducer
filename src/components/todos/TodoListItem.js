@@ -6,19 +6,21 @@ export default function TodoListItem({todo, handleDelete, handleDoneTodo}){
 		<Tr>
 			<Td>
 				<IconButton
-					onClick={ () => handleDoneTodo(todo.id)  }
-					icon = { todo.done ? <SmallCloseIcon/> : <CheckIcon/>}
+					aria-label = 'Complete a to do'
 					colorScheme='teal'
-					variant='solid'
+					icon = { todo.done ? <SmallCloseIcon/> : <CheckIcon/>}
 					maxWidth='40'
+					onClick={ () => handleDoneTodo(todo.id)  }
+					variant='solid'
 				/>
 				<IconButton
-					mx = '2'
-				 	onClick={ () => handleDelete(todo.id)  }
-					icon = { <DeleteIcon/>}
+					aria-label = 'Delete a to do'
 					colorScheme='pink'
-					variant='solid'
+					icon = { <DeleteIcon/>}
 					maxWidth='40'
+					mx = '2'
+					onClick={ () => handleDelete(todo.id)  }
+					variant='solid'
 				/>
 			</Td>
 			<Td>

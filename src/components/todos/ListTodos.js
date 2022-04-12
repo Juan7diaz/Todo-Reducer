@@ -9,10 +9,14 @@ import {
 	Text,
 	Th,
 	Thead,
-	Tr
+	Tr,
+	useColorMode,
 } from '@chakra-ui/react'
 
 export default function ListTodos({ todos, handleDelete, handleDoneTodo }){
+
+	const { colorMode } = useColorMode()
+
   return (
     <Box borderWidth='1px' borderRadius='lg' overflow='hidden' maxWidth='1000px'>
 			<Box p='6'>
@@ -32,8 +36,8 @@ export default function ListTodos({ todos, handleDelete, handleDoneTodo }){
 								<Table variant='striped'>
 								<Thead>
 									<Tr>
-										<Th>description</Th>
 										<Th>action</Th>
+										<Th>description</Th>
 									</Tr>
 								</Thead>
 									<Tbody>
@@ -52,7 +56,7 @@ export default function ListTodos({ todos, handleDelete, handleDoneTodo }){
 							</TableContainer>
 						) :
 						(
-							<Text color='gray.500'>you don't have anything pending 🔥</Text>
+							<Text color={colorMode === 'light' ? 'gray.700' : 'gray.400' }>you don't have anything pending 🔥</Text>
 						)
 					}
 				</Box>

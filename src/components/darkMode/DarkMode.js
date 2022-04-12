@@ -9,6 +9,7 @@ export default function DarkMode(){
     <Flex style={{'padding': '12px 12px 0px 0px'}}>
       <Spacer />
       <IconButton
+        aria-label = {colorMode === 'light' ? 'Switch to dark mode' :  'Switch to light mode'}
         icon={ colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }
         onClick={ toggleColorMode }
       />
