@@ -1,6 +1,6 @@
 import { Heading, useColorModeValue} from '@chakra-ui/react'
 
-function Header(){
+export default function Header(){
 
   //los colores que debe tomar el degradado del titulo para modoDark/modoLight
   const initial = useColorModeValue('#319795', '#81e6d9')
@@ -8,6 +8,7 @@ function Header(){
 
   return (
     <Heading
+      as = 'h1'
       style={{lineHeight: '0.9', textAlign: 'center'}}
       bgGradient={`linear(to-l, ${initial}, ${final})`}
       bgClip='text'
@@ -17,5 +18,3 @@ function Header(){
     </Heading>
   )
 }
-
-export default Header

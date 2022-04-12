@@ -7,7 +7,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-function Footer() {
+export default function Footer() {
 
   return (
     <Center>
@@ -23,13 +23,16 @@ function Footer() {
           align={{ base: 'center', md: 'center' }}
         >
           <Text>
-            Made with ❤️ by Juan Diaz
+            Made with ♡ <a
+              href='https://github.com/juan7diaz'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Juan Diaz
+            </a>
           </Text>
         </Container>
       </Box>
     </Center>
   );
 }
-
-export default Footer;
-
